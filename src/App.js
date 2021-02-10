@@ -17,7 +17,7 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/counter">
+        <Route path="/counter/:name">
           <CounterButtonPage />
         </Route>
         <Route path="/people-list">
