@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CounterButton } from './CounterButton'
+import { CongratulationsMessage } from './CongratulationsMessage';
 import { Greeting } from './Greeting';
 import { PeopleList } from './PeopleList';
 
@@ -15,23 +18,15 @@ const people = [{
 }]
 
 function App() {
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
+
+  const increment = () => setNumberOfClicks(numberOfClicks + 1);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Greeting name="GHOO" numberOfMessages={50} />
-        <PeopleList people={people} /> 
-        <p>
-          <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CongratulationsMessage numberOfClicks={numberOfClicks} threshold={10} />
+        <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
       </header>
     </div>
   );
