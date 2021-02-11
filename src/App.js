@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage } from './pages';
+import {
+  HomePage,
+  CounterButtonPage,
+  PeopleListPage,
+  NotFoundPage,
+  ProtectedPage,
+  ControlledFormPage,
+  UnControlledFormPage
+} from './pages';
 import logo from './logo.svg';
 import { CounterButton } from './CounterButton'
 import { CongratulationsMessage } from './CongratulationsMessage';
@@ -26,6 +34,12 @@ function App() {
           </Route>
           <Route path="/protected">
             <ProtectedPage />
+          </Route>
+          <Route path="/controlled">
+            <ControlledFormPage />
+          </Route>
+          <Route path="/uncontrolled">
+            <UnControlledFormPage />
           </Route>
           <Route>
             <NotFoundPage />
