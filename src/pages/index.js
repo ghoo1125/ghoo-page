@@ -5,3 +5,4 @@ export { NotFoundPage } from './NotFoundPage';
 export { ProtectedPage } from './ProtectedPage';
 export { ControlledFormPage } from './ControlledFormPage';
 export { UnControlledFormPage } from './UnControlledFormPage';
+export { UserProfilePage } from './UserProfilePage';

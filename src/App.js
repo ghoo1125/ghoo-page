@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { FormsNavBar } from './FormsNavBar';
+import { NavBar } from './NavBar';
 import {
   ControlledFormPage,
   CounterButtonPage,
@@ -8,10 +10,9 @@ import {
   NotFoundPage,
   PeopleListPage,
   ProtectedPage,
-  UnControlledFormPage
+  UnControlledFormPage,
+  UserProfilePage
 } from './pages';
-import { FormsNavBar } from './FormsNavBar';
-import { NavBar } from './NavBar';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/protected">
               <ProtectedPage />
+            </Route>
+            <Route path="/user">
+              <UserProfilePage />
             </Route>
             <Route path="/forms">
               <FormsNavBar />
