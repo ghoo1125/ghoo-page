@@ -13,6 +13,7 @@ import {
   UnControlledFormPage,
   UserProfilePage
 } from './pages';
+import { UserDataLoader } from './UserDataLoader';
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
               <ProtectedPage />
             </Route>
             <Route path="/user">
-              <UserProfilePage />
+              <UserDataLoader>
+                <UserProfilePage />
+              </UserDataLoader>
             </Route>
             <Route path="/forms">
               <FormsNavBar />
