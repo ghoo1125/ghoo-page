@@ -13,48 +13,52 @@ import {
   UnControlledFormPage,
   UserProfilePage
 } from './pages';
+import { ThemeContext } from './ThemeContext';
 import { UserDataLoader } from './UserDataLoader';
 
 function App() {
+
   return (
-    <div className="App">
-      <Router>
-        <NavBar />
-        <div className="App-header">
-          <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
-            <Route path="/counter">
-              <CounterButtonPage />
-            </Route>
-            <Route path="/people-list">
-              <PeopleListPage />
-            </Route>
-            <Route path="/protected">
-              <ProtectedPage />
-            </Route>
-            <Route path="/user">
-              <UserDataLoader>
-                <UserProfilePage />
-              </UserDataLoader>
-            </Route>
-            <Route path="/forms">
-              <FormsNavBar />
-              <Route path="/forms/controlled">
-                <ControlledFormPage />
+    <ThemeContext.Provider value='light'>
+      <div className="App">
+        <Router>
+          <NavBar />
+          <div className="App-header">
+            <Switch>
+              <Route path="/" exact>
+                <HomePage />
               </Route>
-              <Route path="/forms/uncontrolled">
-                <UnControlledFormPage />
+              <Route path="/counter">
+                <CounterButtonPage />
               </Route>
-            </Route>
-            <Route>
-              <NotFoundPage />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </div>
+              <Route path="/people-list">
+                <PeopleListPage />
+              </Route>
+              <Route path="/protected">
+                <ProtectedPage />
+              </Route>
+              <Route path="/user">
+                <UserDataLoader>
+                  <UserProfilePage />
+                </UserDataLoader>
+              </Route>
+              <Route path="/forms">
+                <FormsNavBar />
+                <Route path="/forms/controlled">
+                  <ControlledFormPage />
+                </Route>
+                <Route path="/forms/uncontrolled">
+                  <UnControlledFormPage />
+                </Route>
+              </Route>
+              <Route>
+                <NotFoundPage />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
