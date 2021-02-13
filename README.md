@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# Useful Framework
+* Create-React-App
+* Next.js
+* Gatsby
+* react boilerplate
+* RAZZLE
+
+# Hosting platforms
+## Netlify
+```
+npm install --save-dev netlify-cli
+npm run buil
+npx netlify deploy
+```
+## Amazon S3
+## Firebase
+
+#  Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
