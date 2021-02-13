@@ -38,9 +38,9 @@ function App() {
                 <ProtectedPage />
               </Route>
               <Route path="/user">
-                <UserDataLoader>
+                {/* <UserDataLoader> */}
                   <UserProfilePage />
-                </UserDataLoader>
+                {/* </UserDataLoader> */}
               </Route>
               <Route path="/forms">
                 <FormsNavBar />

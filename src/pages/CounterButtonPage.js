@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import { parse } from 'query-string';
-import { CounterButton } from '../CounterButton';
+import React, { useEffect, useState } from 'react';
 import { CongratulationsMessage } from '../CongratulationsMessage';
+import { CounterButton } from '../CounterButton';
 import { DisplayIf } from '../DisplayIf';
+import { usePersistentState } from '../usePersistentState';
 
 export const CounterButtonPage = () => {
-    // const { name } = useParams();
-    const location = useLocation();
-    const startingValue = parse(location.search).startingValue || 0;
-    const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue));
+    const [numberOfClicks, setNumberOfClicks] = usePersistentState('numberOfClicks', 0, Number);
     const [hideMessage, setHideMessage] = useState(false);
+
+    useEffect(() => {
+        localStorage.setItem('numberOfClicks', numberOfClicks);
+    }, [numberOfClicks]);
 
     const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
     return (
         <>
-            {/* <h1>{name}'s CounterButton Page</h1> */}
             <h1>The CounterButton Page</h1>
             <DisplayIf condition={!hideMessage && numberOfClicks >= 10}>
                 <CongratulationsMessage

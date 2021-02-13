@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useUserData } from '../useUserData';
 
-export const UserProfilePage = ({ user }) => {
+export const UserProfilePage = () => {
+    const user = useUserData();
     return (
         <div>
             <h3>Name: {user.name.first} {user.name.last}</h3>
