@@ -14,7 +14,6 @@ import {
   UserProfilePage
 } from './pages';
 import { ThemeContext } from './ThemeContext';
-import { UserDataLoader } from './UserDataLoader';
 
 function App() {
 
@@ -39,7 +38,7 @@ function App() {
               </Route>
               <Route path="/user">
                 {/* <UserDataLoader> */}
-                  <UserProfilePage />
+                <UserProfilePage />
                 {/* </UserDataLoader> */}
               </Route>
               <Route path="/forms">
@@ -51,6 +50,13 @@ function App() {
                   <UnControlledFormPage />
                 </Route>
               </Route>
+              <Route path='/login' component={() => {
+                let redirectUri = 'https%3A%2F%2F3212389bd3a9.ngrok.io'
+                let lineAuthorizeUrl = `https://access.line.me/oauth2/v2.1/authorize?client_id=1655869470&redirect_uri=${redirectUri}&scope=profile&response_type=code&response_mode=query&state=abc&nonce=123`;
+                console.log(lineAuthorizeUrl);
+                window.location.href = lineAuthorizeUrl;
+                return null;
+              }} />
               <Route>
                 <NotFoundPage />
               </Route>
