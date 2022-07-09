@@ -13,6 +13,7 @@ import {
   UnControlledFormPage,
   UserProfilePage
 } from './pages';
+import { LoggedInPage } from './pages/LoggedInPage';
 import { ThemeContext } from './ThemeContext';
 
 function App() {
@@ -50,13 +51,14 @@ function App() {
                   <UnControlledFormPage />
                 </Route>
               </Route>
-              <Route path='/login' component={() => {
-                let redirectUri = 'https%3A%2F%2F3212389bd3a9.ngrok.io'
-                let lineAuthorizeUrl = `https://access.line.me/oauth2/v2.1/authorize?client_id=1655869470&redirect_uri=${redirectUri}&scope=profile&response_type=code&response_mode=query&state=abc&nonce=123`;
-                console.log(lineAuthorizeUrl);
+              <Route path='/line-login' component={() => {
+                const redirectUri = 'https://58b6-2001-b400-e431-da39-c51f-853a-b054-26e4.jp.ngrok.io/logged-in'
+                const lineAuthorizeUrl = `https://access.line.me/oauth2/v2.1/authorize?client_id=1655869470&redirect_uri=${redirectUri}&scope=profile&response_type=code&response_mode=query&state=abc&nonce=123`;
                 window.location.href = lineAuthorizeUrl;
-                return null;
               }} />
+              <Route path='/logged-in'>
+                <LoggedInPage />
+              </Route>
               <Route>
                 <NotFoundPage />
               </Route>

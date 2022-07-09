@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 export const NavBar = () => (
     <ul>
         <li>
+            <Link to="/line-login">Line Login</Link>
+        </li>
+        <li>
             <Link to="/">Home</Link>
         </li>
         <li>
