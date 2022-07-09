@@ -52,7 +52,7 @@ function App() {
                 </Route>
               </Route>
               <Route path='/line-login' component={() => {
-                const redirectUri = 'https://58b6-2001-b400-e431-da39-c51f-853a-b054-26e4.jp.ngrok.io/logged-in'
+                const redirectUri = 'https://79ea-2001-b400-e488-33b-c8ac-3dbc-19d7-507d.jp.ngrok.io/logged-in'
                 const lineAuthorizeUrl = `https://access.line.me/oauth2/v2.1/authorize?client_id=1655869470&redirect_uri=${redirectUri}&scope=profile&response_type=code&response_mode=query&state=abc&nonce=123`;
                 window.location.href = lineAuthorizeUrl;
               }} />
